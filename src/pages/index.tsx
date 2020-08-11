@@ -13,6 +13,10 @@ const Home = () => (
       <Link href="/about" as={process.env.BACKEND_URL + '/about'}>
         <a>About</a>
       </Link>
+      <div></div>
+      <Link href="/sitemap" as={process.env.BACKEND_URL + '/sitemap'}>
+        <a>sitemap</a>
+      </Link>
     </div>
   </>
 )
