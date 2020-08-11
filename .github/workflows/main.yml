@@ -28,5 +28,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         env:
           PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-          PUBLISH_BRANCH: deploy-gh-pages
+          PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./out
