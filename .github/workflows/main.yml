@@ -18,7 +18,7 @@ jobs:
       - name: build
         run: |
           yarn build
-        env:
+        with:
           GITHUB_PAGES: true
       - name: export
         run: |
@@ -26,7 +26,7 @@ jobs:
           touch out/.nojekyll
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
-        env:
+        with:
           PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./out
