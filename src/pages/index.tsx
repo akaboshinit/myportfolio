@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import css from 'styled-components';
 
 const Home = () => (
   <>
@@ -10,6 +11,7 @@ const Home = () => (
     </Head>
     <div>
       Hello World.{' '}
+      <div></div>
       <Link href="/about" as={process.env.BACKEND_URL + '/about'}>
         <a>About</a>
       </Link>
@@ -17,8 +19,18 @@ const Home = () => (
       <Link href="/sitemap" as={process.env.BACKEND_URL + '/sitemap'}>
         <a>sitemap</a>
       </Link>
+      {/* <H1>aaaa</H1>
+      <Div>wwwww</Div> */}
     </div>
   </>
 )
+
+const H1 = css.h1({
+  backgroundColor: 'red'
+})
+
+const Div = css.div({
+  backgroundColor: 'blue'
+})
 
 export default Home;
