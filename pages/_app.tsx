@@ -1,5 +1,6 @@
 import * as React from 'react'
 import App, { AppProps } from 'next/app'
+import Head from 'next/head'
 import Link from 'next/link';
 
 import css, { ThemeProvider } from 'styled-components'
@@ -91,11 +92,16 @@ const Move = css.article({
     width: '550px',
     height: '550px'
 })
-
+const env = require('../env-config')
+console.log(env)
 class MyApp extends App {
 render(): JSX.Element {
     const { Component, pageProps }: AppProps = this.props
     return (
+    <>
+    <Head>
+        <title>akaboshinit</title>
+    </Head>
     <ThemeProvider theme={theme}>
         <Article>
             <Box>
@@ -104,19 +110,23 @@ render(): JSX.Element {
                     <Title>akaboshinit</Title>
                 </Divpro>
                 <Ul>
-                    <Link href="/" as={process.env.BACKEND_URL + '/'}>
+                    {/* <Link href="/" as={process.env.BACKEND_URL + '/'}>
+                        <A>Home</A>
+                    </Link> */}
+                    <div></div>
+                    <Link href="/category/about" as={process.env.BACKEND_URL + '/category/about'}>
                         <A>About</A>
                     </Link>
                     <div></div>
-                    <Link href="/profile" as={process.env.BACKEND_URL + '/profile'}>
+                    <Link href="/category/profile" as={process.env.BACKEND_URL + '/category/profile'}>
                         <A>Profile</A>
                     </Link>
                     <div></div>
-                    <Link href="/task" as={process.env.BACKEND_URL + '/task'}>
+                    <Link href="/category/task" as={process.env.BACKEND_URL + '/category/task'}>
                         <A>Task</A>
                     </Link>
                     <div></div>
-                    <Link href="/others" as={process.env.BACKEND_URL + '/others'}>
+                    <Link href="/category/others" as={process.env.BACKEND_URL + '/category/others'}>
                         <A>Others</A>
                     </Link>
                     <div></div>
@@ -133,6 +143,7 @@ render(): JSX.Element {
             </Box>
         </Article>
     </ThemeProvider>
+    </>
     )
 }
 }
