@@ -39,13 +39,15 @@ const Divpro = css.div({
     gridRow: '1/2',
     textAlign: 'center'
 })
-
+const env = require('../env-config')
+// const a = String(env.process.env.BACKEND_URL) + '/images/fukurou.png'
+console.log(process.env.BACKEND_URL)
 const Img = css.img({
     width: '180px',
     height: '180px',
     borderRadius: '50%',
     border: '1px solid black',
-    marginTop: '20px'
+    marginTop: '20px',
 })
 
 const Title = css.h1({
@@ -92,8 +94,7 @@ const Move = css.article({
     width: '550px',
     height: '550px'
 })
-const env = require('../env-config')
-console.log(env)
+
 class MyApp extends App {
 render(): JSX.Element {
     const { Component, pageProps }: AppProps = this.props
@@ -106,7 +107,7 @@ render(): JSX.Element {
         <Article>
             <Box>
                 <Divpro>
-                    <Img src='/myportfolio/images/fukurou.png'></Img>
+                    <Img />
                     <Title>akaboshinit</Title>
                 </Divpro>
                 <Ul>
