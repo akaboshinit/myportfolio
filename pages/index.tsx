@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import css from 'styled-components';
 
-const Home = (props : any) => {
+const About = (props : any) => {
 
   console.log('Render!!')
 
@@ -25,12 +25,4 @@ const Home = (props : any) => {
   )
 }
 
-const H1 = css.h1({
-  backgroundColor: 'red'
-})
-
-const Div = css.div({
-  backgroundColor: 'blue'
-})
-
-export default Home;
+export default About;
