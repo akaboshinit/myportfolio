@@ -39,9 +39,7 @@ const Divpro = css.div({
     gridRow: '1/2',
     textAlign: 'center'
 })
-const dir = String(process.env.BACKEND_URL) + 'images/main.jpg'
-console.log(String(process.env.BACKEND_URL))
-console.log(dir)
+
 const Img = css.img({
     width: '180px',
     height: '180px',
@@ -94,7 +92,7 @@ const Move = css.article({
     width: '550px',
     height: '550px'
 })
-
+const dir = String(process.env.BACKEND_URL)
 class MyApp extends App {
 render(): JSX.Element {
     const { Component, pageProps }: AppProps = this.props
@@ -108,7 +106,7 @@ render(): JSX.Element {
         <Article>
             <Box>
                 <Divpro>
-                    <Img />
+                    <Img src={dir+'/images/main.jpg'} />
                     <Title>akaboshinit</Title>
                 </Divpro>
                 <Ul>
@@ -116,19 +114,19 @@ render(): JSX.Element {
                         <A>Home</A>
                     </Link> */}
                     <div></div>
-                    <Link href="/category/about" as={process.env.BACKEND_URL + '/category/about'}>
+                    <Link href="/category/about" as={dir+'/category/about'}>
                         <A>About</A>
                     </Link>
                     <div></div>
-                    <Link href="/category/profile" as={process.env.BACKEND_URL + '/category/profile'}>
+                    <Link href="/category/profile" as={dir+'/category/profile'}>
                         <A>Profile</A>
                     </Link>
                     <div></div>
-                    <Link href="/category/task" as={process.env.BACKEND_URL + '/category/task'}>
+                    <Link href="/category/task" as={dir+'/category/task'}>
                         <A>Task</A>
                     </Link>
                     <div></div>
-                    <Link href="/category/others" as={process.env.BACKEND_URL + '/category/others'}>
+                    <Link href="/category/others" as='/category/others'>
                         <A>Others</A>
                     </Link>
                     <div></div>
