@@ -39,9 +39,9 @@ const Divpro = css.div({
     gridRow: '1/2',
     textAlign: 'center'
 })
-const env = require('../env-config')
-// const a = String(env.process.env.BACKEND_URL) + '/images/fukurou.png'
-console.log(process.env.BACKEND_URL)
+const dir = String(process.env.BACKEND_URL) + 'images/main.jpg'
+console.log(String(process.env.BACKEND_URL))
+console.log(dir)
 const Img = css.img({
     width: '180px',
     height: '180px',
@@ -102,6 +102,7 @@ render(): JSX.Element {
     <>
     <Head>
         <title>akaboshinit</title>
+        <link rel="icon" type="image/jpg" href="/icon.jpg"></link>
     </Head>
     <ThemeProvider theme={theme}>
         <Article>
