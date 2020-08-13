@@ -100,7 +100,7 @@ render(): JSX.Element {
         <Article>
             <Box>
                 <Divpro>
-                    <Img src='/images/fukurou.png'></Img>
+                    <Img src='/myportfolio/images/fukurou.png'></Img>
                     <Title>akaboshinit</Title>
                 </Divpro>
                 <Ul>
