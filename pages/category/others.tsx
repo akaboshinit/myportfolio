@@ -3,7 +3,6 @@ import Link from 'next/link';
 import css from 'styled-components';
 
 const Others = (props : any) => {
-
 //   function loop() {
 //     var i, n, s = '';
 //     for (i = 0; i < 10; i++) {

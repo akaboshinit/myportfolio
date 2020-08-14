@@ -9,10 +9,11 @@
     "deploy": "git add -A && git commit && git push origin master "
   },
   "dependencies": {
+    "@types/google.analytics": "0.0.40",
     "@types/styled-components": "^5.1.2",
     "babel-plugin-styled-components": "^1.11.1",
     "next": "latest",
-    "react": "^16.7.0",     
+    "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "styled-components": "^5.1.1"
   },

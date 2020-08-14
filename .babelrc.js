@@ -4,6 +4,10 @@ module.exports = {
   presets: ['next/babel'],
   plugins: [
     ['transform-define', env],
-    ["babel-plugin-styled-components"]
-  ],
+    ["styled-components",{
+      "ssr": true,
+      "displayName": false,
+      "preprocess": false }
+    ]
+  ]
 }
