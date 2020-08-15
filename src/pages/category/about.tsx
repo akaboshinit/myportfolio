@@ -18,14 +18,16 @@ const About = (props : any) => {
   )
 }
 
-About.getInitialProps = async ( {ctx} : any ) => {
-  const f = ['🌑', '🌒', '🌓', '🌔', '🌝', '🌖', '🌗', '🌘'];
-  function loop() {
-      location.hash = f[Math.floor((Date.now()/100)%f.length)];
-      // timeout = setTimeout(loop,500);
-      console.log(f)
-  }
-  loop()
+About.getInitialProps = async ( ctx : any ) => {
+  // if( !ctx.req ){
+  //   const f = ['🌑', '🌒', '🌓', '🌔', '🌝', '🌖', '🌗', '🌘'];
+  //   function loop() {
+  //       location.hash = f[Math.floor((Date.now()/100)%f.length)];
+  //       // timeout = setTimeout(loop,500);
+  //       console.log(f)
+  //   }
+  //   loop()
+  // }
   return { a:'a' }
 }
 
