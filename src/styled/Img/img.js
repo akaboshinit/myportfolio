@@ -6,6 +6,7 @@ const Img = css.img({
     borderRadius: '50%',
     border: '1px solid black',
     marginTop: '20px',
+    userSelect: 'none'
 })
 
 export default Img

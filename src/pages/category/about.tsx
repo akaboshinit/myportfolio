@@ -18,18 +18,8 @@ const About = (props : any) => {
   )
 }
 
-// About.getInitialProps = async ( ctx : any ) => {
-//   let pathname = ''
-//   if( !ctx.req ){
-//     pathname = ctx.pathname;
-//     // const f = ['🌑', '🌒', '🌓', '🌔', '🌝', '🌖', '🌗', '🌘'];
-//     // function loop() {
-//     //   location.hash = f[Math.floor((Date.now()/100)%f.length)];
-//     //   setTimeout(loop, 50);
-//     // }
-//     // loop();
-//   }
-//   return { pathname:pathname , stars: Math.random() }
-// }
+About.getInitialProps = async ( {ctx} : any ) => {
+  return { a:'a' }
+}
 
 export default About;
