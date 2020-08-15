@@ -6,7 +6,7 @@ module.exports = {
     ['transform-define', env],
     ["styled-components",{
       "ssr": true,
-      "displayName": false,
+      "displayName": true,
       "preprocess": false }
     ]
   ]

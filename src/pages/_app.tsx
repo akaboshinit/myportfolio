@@ -4,15 +4,11 @@ import Head from 'next/head'
 import Link from 'next/link';
 import css, { ThemeProvider } from 'styled-components'
 import { H1,A,Link_h2,Img,Icon,List,Card } from './css/index'
-const dir = String(process.env.BACKEND_URL)
-import Router from 'next/router'
-// import * as gtag from '../public/gtag'
-// Router.events.on('routeChangeComplete', url => gtag.pageview(url))
+const dir = String(process.env.BACKEND_URL);
 
 class MyApp extends App {
 render(): JSX.Element {
     const { Component, pageProps }: AppProps = this.props
-    console.log(this.props)
     return (
     <>
     <Head>
@@ -45,10 +41,10 @@ render(): JSX.Element {
                     <div></div>
                 </List>
                 <Icons>
-                    <A href="a"><Icon className="fab fa-2x fa-instagram"></Icon></A>
-                    <A href="a"><Icon className="fab fa-2x fa-twitter"></Icon></A>
+                    <A href="https://www.instagram.com/akaboshinit/?hl=ja"><Icon className="fab fa-2x fa-instagram"></Icon></A>
+                    <A href="https://twitter.com/akaboshinit"><Icon className="fab fa-2x fa-twitter"></Icon></A>
                     <A href="a"><Icon className="fab fa-2x fa-facebook"></Icon></A>
-                    <A href="a"><Icon className="fab fa-2x fa-github"></Icon></A>
+                    <A href="https://github.com/akaboshinit"><Icon className="fab fa-2x fa-github"></Icon></A>
                 </Icons>
                 <Divprece>
                     <Card>
@@ -68,7 +64,7 @@ render(): JSX.Element {
 //     if( !ctx.req ){
 //         pathname = ctx.pathname;
 //     }
-//     return { pathname:pathname  }
+//     return { pathname:pathname }
 // }
 
 export default MyApp
