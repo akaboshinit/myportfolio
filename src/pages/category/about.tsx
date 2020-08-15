@@ -18,8 +18,8 @@ const About = (props : any) => {
   )
 }
 
-About.getInitialProps = async ( {ctx} : any ) => {
-  return { a:'a' }
-}
+// About.getInitialProps = async ( {ctx} : any ) => {
+//   return { a:'a' }
+// }
 
 export default About;

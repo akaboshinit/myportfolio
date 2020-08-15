@@ -12,8 +12,9 @@ return (
 )
 }
 
-Others.getInitialProps = async ( {ctx} : any ) => {
+Others.getInitialProps = async ( ctx : any ) => {
 if( !ctx.req ){
+    console.log(ctx)
     function loop() {
         var i, n, s = '';
         for (i = 0; i < 10; i++) {
