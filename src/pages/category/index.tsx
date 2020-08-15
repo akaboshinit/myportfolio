@@ -7,17 +7,17 @@ console.log('Render!!')
 return (
     <>
     <div>
-        HomePage
+        category-HomePage
     </div>
     </>
 )
 }
 
-Index.getInitialProps = async ( req:any, res :any) => {
-    if (res) {
-        res.writeHead(302, { Location: '/category/about' });
-        res.end();
-    }
-}
+// Index.getInitialProps = async ( req:any, res :any) => {
+//     if (res) {
+//         res.writeHead(302, { Location: '/category/about' });
+//         res.end();
+//     }
+// }
 
 export default Index;
