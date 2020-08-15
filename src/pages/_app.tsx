@@ -77,38 +77,38 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     )
 }
 
-MyApp.getInitialProps = ({ctx}:any) => {
-    // if( !ctx.res ){
-    //     const pathname = ctx.pathname;
-    //     const currentpath = pathname.substr(pathname.lastIndexOf('/')+1);
-    //     let timeout;
-    //     let f :any = [];
+// MyApp.getInitialProps = ({ctx}:any) => {
+//     if( !ctx.res ){
+//         const pathname = ctx.pathname;
+//         const currentpath = pathname.substr(pathname.lastIndexOf('/')+1);
+//         let timeout;
+//         let f :any = [];
 
-    //     clearTimeout(timeout)
-    //     function loop() {
-    //         location.hash = f[Math.floor((Date.now()/100)%f.length)];
-    //         // timeout = setTimeout(loop,500);
-    //         console.log(f)
-    //     }
-    //     loop()
+//         clearTimeout(timeout)
+//         function loop() {
+//             location.hash = f[Math.floor((Date.now()/100)%f.length)];
+//             // timeout = setTimeout(loop,500);
+//             console.log(f)
+//         }
+//         loop()
 
-    //     switch(currentpath) {
-    //         case 'about' :
-    //             f = ['🌑', '🌒', '🌓', '🌔', '🌝', '🌖', '🌗', '🌘'];
-    //             break
-    //         case 'profile' :
-    //             f = ['1','2','3','4','5','6','8','9'];
-    //             break
-    //         case 'task' :
-    //             f = ['a','d','e','v','e','y','i','p'];
-    //             break
-    //         case 'others' :
-    //             f = ['as','cd','vf','hy','ki',';;','l;','99'];
-    //             break
-    //     }
-    // }
-    return { a:'aa' }
-}
+//         switch(currentpath) {
+//             case 'about' :
+//                 f = ['🌑', '🌒', '🌓', '🌔', '🌝', '🌖', '🌗', '🌘'];
+//                 break
+//             case 'profile' :
+//                 f = ['1','2','3','4','5','6','8','9'];
+//                 break
+//             case 'task' :
+//                 f = ['a','d','e','v','e','y','i','p'];
+//                 break
+//             case 'others' :
+//                 f = ['as','cd','vf','hy','ki',';;','l;','99'];
+//                 break
+//         }
+//     }
+//     return { a:'aa' }
+// }
 
 export default MyApp
 
