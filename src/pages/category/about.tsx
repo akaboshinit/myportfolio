@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { H2 } from '../../styled/index'
 
 const About = (props : any) => {
-
   return(
     <>
       <Head>

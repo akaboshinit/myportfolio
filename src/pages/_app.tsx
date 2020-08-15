@@ -1,19 +1,20 @@
 import * as React from 'react'
-import App, { AppProps } from 'next/app'
+import App, { AppProps, AppContext } from 'next/app'
 import Head from 'next/head'
 import Link from 'next/link';
 import css, { ThemeProvider } from 'styled-components'
 import { H1,A,Link_h2,Img,Icon,List,Card } from '../styled/index'
 const dir = String(process.env.BACKEND_URL);
 
-class MyApp extends App {
-render(): JSX.Element {
-    const { Component, pageProps }: AppProps = this.props
+import { useRouter } from 'next/router'
+
+const MyApp = ({ Component, pageProps }: AppProps) => {
+    const pathname = useRouter().pathname
+    console.log(pathname)
     return (
     <>
     <Head>
         <title>akaboshinit</title>
-        
     </Head>
     <ThemeProvider theme={theme}>
         <Article>
@@ -48,6 +49,7 @@ render(): JSX.Element {
                 </Icons>
                 <Divprece>
                     <Card>
+                        <div>{pathname}</div>
                         <Component {...pageProps} />
                     </Card>
                 </Divprece>
@@ -57,17 +59,80 @@ render(): JSX.Element {
     </>
     )
 }
-}
 
-// MyApp.getInitialProps = async ( ctx : any) => {
-//     let pathname = ''
-//     if( !ctx.req ){
-//         pathname = ctx.pathname;
+// MyApp.getInitialProps = async (ctx:any) => {
+//     let pathname = 'jj'
+//     if( !props.req ){
+//         pathname = props.pathname;
+//         console.log(pathname)
 //     }
-//     return { pathname:pathname }
+//     console.log(555)
+//     return { pathname:'aa' }
 // }
 
 export default MyApp
+
+// export default class MyApp extends App {
+//     // static getInitialProps(ctx: any){
+//     //     let pathname = 'jj'
+//     //     if( !ctx.req ){
+//     //         pathname = ctx.pathname;
+//     //         console.log(pathname)
+//     //     }
+//     //     return { pathname:pathname }
+//     // }
+// render(): JSX.Element {
+//     console.log(this.props)
+//     const { Component, pageProps }: AppProps = this.props
+//     return (
+//     <>
+//     <Head>
+//         <title>akaboshinit</title>
+//     </Head>
+//     <ThemeProvider theme={theme}>
+//         <Article>
+//             <Box>
+//                 <Divpro>
+//                     <Img src={dir+'/images/main.jpg'} />
+//                     <H1>akaboshinit</H1>
+//                 </Divpro>
+//                 <List>
+//                     <Link href="/category/about" as={dir+'/category/about'}>
+//                         <Link_h2>About</Link_h2>
+//                     </Link>
+//                     <div></div>
+//                     <Link href="/category/profile" as={dir+'/category/profile'}>
+//                         <Link_h2>Profile</Link_h2>
+//                     </Link>
+//                     <div></div>
+//                     <Link href="/category/task" as={dir+'/category/task'}>
+//                         <Link_h2>Task</Link_h2>
+//                     </Link>
+//                     <div></div>
+//                     <Link href="/category/others" as={dir+'/category/others'}>
+//                         <Link_h2>Others</Link_h2>
+//                     </Link>
+//                     <div></div>
+//                 </List>
+//                 <Icons>
+//                     <A href="https://www.instagram.com/akaboshinit/?hl=ja"><Icon className="fab fa-2x fa-instagram"></Icon></A>
+//                     <A href="https://twitter.com/akaboshinit"><Icon className="fab fa-2x fa-twitter"></Icon></A>
+//                     <A href="a"><Icon className="fab fa-2x fa-facebook"></Icon></A>
+//                     <A href="https://github.com/akaboshinit"><Icon className="fab fa-2x fa-github"></Icon></A>
+//                 </Icons>
+//                 <Divprece>
+//                     <Card>
+//                         <Component {...pageProps} />
+//                     </Card>
+//                 </Divprece>
+//             </Box>
+//         </Article>
+//     </ThemeProvider>
+//     </>
+//     )
+// }
+// }
+
 
 const theme = ({
     light: 'white',
