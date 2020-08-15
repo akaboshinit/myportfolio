@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { H2 } from './css/index'
+import { H2 } from '../styled/index'
 import css from 'styled-components';
 const dir = String(process.env.BACKEND_URL)
 

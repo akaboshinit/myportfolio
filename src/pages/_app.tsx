@@ -3,7 +3,7 @@ import App, { AppProps } from 'next/app'
 import Head from 'next/head'
 import Link from 'next/link';
 import css, { ThemeProvider } from 'styled-components'
-import { H1,A,Link_h2,Img,Icon,List,Card } from './css/index'
+import { H1,A,Link_h2,Img,Icon,List,Card } from '../styled/index'
 const dir = String(process.env.BACKEND_URL);
 
 class MyApp extends App {
