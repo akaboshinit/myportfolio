@@ -5,5 +5,5 @@
 const debug = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-  assetPrefix: process.env.GITHUB_PAGES ? '/myportfolio' : '',
+    assetPrefix: process.env.GITHUB_PAGES ? '/myportfolio' : '',
 }

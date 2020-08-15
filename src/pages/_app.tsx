@@ -1,12 +1,11 @@
 import * as React from 'react'
-import App, { AppProps, AppContext } from 'next/app'
+import { AppProps } from 'next/app'
 import Head from 'next/head'
 import Link from 'next/link';
-import css, { ThemeProvider } from 'styled-components'
+import { useRouter } from 'next/router'
+import styled, { ThemeProvider } from 'styled-components'
 import { H1,A,Link_h2,Img,Icon,Card } from '../styled/index'
 const dir = String(process.env.BACKEND_URL);
-
-import { useRouter } from 'next/router'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
     const pathname = useRouter().pathname;
@@ -36,7 +35,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <ThemeProvider theme={theme}>
         <Article>
             <Box>
-                <Divpro>
+                <Divpro >
+                    {/* css="transform:translateY(200px)" */}
                     <Img width="180px" height="180px" src={dir+'/images/main.jpg'} />
                     <H1>akaboshinit</H1>
                 </Divpro>
@@ -77,39 +77,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     )
 }
 
-// MyApp.getInitialProps = ({ctx}:any) => {
-//     if( !ctx.res ){
-//         const pathname = ctx.pathname;
-//         const currentpath = pathname.substr(pathname.lastIndexOf('/')+1);
-//         let timeout;
-//         let f :any = [];
-
-//         clearTimeout(timeout)
-//         function loop() {
-//             location.hash = f[Math.floor((Date.now()/100)%f.length)];
-//             // timeout = setTimeout(loop,500);
-//             console.log(f)
-//         }
-//         loop()
-
-//         switch(currentpath) {
-//             case 'about' :
-//                 f = ['🌑', '🌒', '🌓', '🌔', '🌝', '🌖', '🌗', '🌘'];
-//                 break
-//             case 'profile' :
-//                 f = ['1','2','3','4','5','6','8','9'];
-//                 break
-//             case 'task' :
-//                 f = ['a','d','e','v','e','y','i','p'];
-//                 break
-//             case 'others' :
-//                 f = ['as','cd','vf','hy','ki',';;','l;','99'];
-//                 break
-//         }
-//     }
-//     return { a:'aa' }
-// }
-
 export default MyApp
 
 
@@ -118,13 +85,13 @@ const theme = ({
     dark: 'black'
 })
 
-const Article = css.article({
+const Article = styled.article({
     backgroundColor: '#FDFAF7',
     width: '100%',
     height: '100vh'
 })
 
-const Box = css.div({
+const Box = styled.div({
     // backgroundColor: 'grey',
     width: '770px',
     height: '550px',
@@ -143,20 +110,20 @@ const Box = css.div({
     gridTemplateRows: '1fr 1fr 0.3fr'
 })
 
-const Divpro = css.div({
+const Divpro = styled.div({
     gridColumn: '1/2',
     gridRow: '1/2',
     textAlign: 'center'
 })
 
-const List = css.ul({
+const List = styled.ul({
     boxSizing: 'border-box',
     gridColumn: '0/1',
     gridRow: '2/3',
     margin: '30px 0px 0px 30px'
 })
 
-const Icons = css.ul({
+const Icons = styled.ul({
     gridColumn: '0/1',
     gridRow: '3/4',
     display: 'flex',
@@ -167,7 +134,7 @@ const Icons = css.ul({
     justifyContent: 'space-around'
 })
 
-const Divprece = css.div({
+const Divprece = styled.div({
     gridColumn: '2/3',
     gridRow: '1/4',
 })

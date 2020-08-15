@@ -18,8 +18,15 @@ const About = (props : any) => {
   )
 }
 
-// About.getInitialProps = async ( {ctx} : any ) => {
-//   return { a:'a' }
-// }
+About.getInitialProps = async ( {ctx} : any ) => {
+  const f = ['🌑', '🌒', '🌓', '🌔', '🌝', '🌖', '🌗', '🌘'];
+  function loop() {
+      location.hash = f[Math.floor((Date.now()/100)%f.length)];
+      // timeout = setTimeout(loop,500);
+      console.log(f)
+  }
+  loop()
+  return { a:'a' }
+}
 
 export default About;
