@@ -13,7 +13,7 @@ render(): JSX.Element {
     <>
     <Head>
         <title>akaboshinit</title>
-        <link rel="icon" type="image/jpg" href="/icon.jpg"></link>
+        <link rel="icon" type="image/jpg" href={dir+'/icon.jpg'}></link>
     </Head>
     <ThemeProvider theme={theme}>
         <Article>
