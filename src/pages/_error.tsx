@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { H2 } from '../styled/index'
-import css from 'styled-components';
+import styled from 'styled-components';
 const dir = String(process.env.BACKEND_URL)
 
 const Error = (props : any) => {
@@ -18,18 +18,18 @@ const Error = (props : any) => {
     )
 }
 
-const C = css.div({
-    position: 'relative',
-    top: '50%'
-}) 
+const C = styled.div`
+    position: 'relative';
+    top: '50%';
+`
 
-const Center = css.div({
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%,-50%)',
-    fontSize: '1.5em',
-    textAlign: 'center',
-}) 
+const Center = styled.div`
+    position: 'absolute';
+    top: '50%';
+    left: '50%';
+    transform: 'translate(-50%,-50%)';
+    font-size: '1.5em';
+    text-align: 'center';
+`
 
 export default Error;
