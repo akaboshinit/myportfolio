@@ -92,14 +92,14 @@ const MyApp = ({ Component, pageProps }: AppProps, { build_time }:any ) => {
     )
 }
 
-export const getStaticProps = async (context:any) => {
-    const build_time = new Date().toString();
-    return {
-        props: {
-            build_time
-        },
-    }
-}
+// export const getStaticProps = async (context:any) => {
+//     const build_time = new Date().toString();
+//     return {
+//         props: {
+//             build_time
+//         },
+//     }
+// }
 
 export default MyApp
 
