@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState,useEffect } from 'react'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import Link from 'next/link';
@@ -32,8 +32,26 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
             break
         default:
     }
-    const aa = () =>{
-        console.log('click:'+currentpath)
+
+    const [click, toggle] = useState(false)
+    useEffect(() => {
+        console.log('click:'+{click}.click+':'+currentpath)
+    },[click]);
+
+    const a = () => {
+        let animes:any = document.getElementsByClassName('animate__animated')
+        if( {click}.click == false ){
+            for( let i = 0; animes.length > i; i++ ){
+                const randomnum = Math.floor(Math.random()*animes.length)
+                setTimeout(()=>{animes[randomnum].classList.add('animate__hinge','animate__slower')},i*500)
+            }
+        }
+        if( {click}.click == true ){
+            for( let i = 0; animes.length > i; i++ ){
+                animes[i].classList.remove('animate__hinge','animate__slower');
+            }
+        }
+        toggle(!click)
     }
 
     return (
@@ -43,38 +61,38 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
     </Head>
     <ThemeProvider theme={theme}>
         <Article>
+        <Input value="anime" type="button"onClick={()=>a()} />
             <Box>
-                <Divpro className="animate__animated animate__hinge animate__slower animate__infinite">
+                <Divpro className="animate__animated">
                     <Img width="180px" height="180px" src={dir+'/images/main_circle.png'} />
                     <H1>akaboshinit</H1>
                 </Divpro>
-                <List className="animate__animated animate__hinge animate__slower animate__delay-1s">
+                <List>
                     <Link href="/category/about" as={dir+'/category/about'}>
-                        <Link_h2 currentpath={About}>About</Link_h2>
+                        <Link_h2 className="animate__animated" currentpath={About}>About</Link_h2>
                     </Link>
                     <div></div>
                     <Link href="/category/profile" as={dir+'/category/profile'}>
-                        <Link_h2 currentpath={Profile}>Profile</Link_h2>
+                        <Link_h2 className="animate__animated" currentpath={Profile}>Profile</Link_h2>
                     </Link>
                     <div></div>
                     <Link href="/category/task" as={dir+'/category/task'}>
-                        <Link_h2 currentpath={Task}>Task</Link_h2>
+                        <Link_h2 className="animate__animated" currentpath={Task}>Task</Link_h2>
                     </Link>
                     <div></div>
                     <Link href="/category/others" as={dir+'/category/others'}>
-                        <Link_h2 currentpath={Others}>Others</Link_h2>
+                        <Link_h2 className="animate__animated" currentpath={Others}>Others</Link_h2>
                     </Link>
                     <div></div>
                 </List>
-                <Icons className="animate__animated animate__hinge animate__slower animate__delay-5s">
-                    <A href="https://www.instagram.com/akaboshinit/?hl=ja"><Icon className="fab fa-2x fa-instagram"></Icon></A>
-                    <A href="https://twitter.com/akaboshinit"><Icon className="fab fa-2x fa-twitter"></Icon></A>
-                    <A href="a"><Icon className="fab fa-2x fa-facebook"></Icon></A>
-                    <A href="https://github.com/akaboshinit"><Icon className="fab fa-2x fa-github"></Icon></A>
+                <Icons >
+                    <A href="https://www.instagram.com/akaboshinit/?hl=ja"><Icon className="animate__animated fab fa-2x fa-instagram"></Icon></A>
+                    <A href="https://twitter.com/akaboshinit"><Icon className="animate__animated fab fa-2x fa-twitter"></Icon></A>
+                    <A href="a"><Icon className="animate__animated fab fa-2x fa-facebook"></Icon></A>
+                    <A href="https://github.com/akaboshinit"><Icon className="animate__animated fab fa-2x fa-github"></Icon></A>
                 </Icons>
-                <Divprece className="animate__animated animate__hinge animate__slower animate__delay-5s">
+                <Divprece className="animate__animated">
                     <Card>
-                        <Input type="button"onClick={()=>aa()} />
                         <Component {...pageProps} />
                     </Card>
                 </Divprece>
@@ -84,11 +102,16 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
     </>
     )
 }
+// className="animate__animated animate__hinge animate__slower"
 
 export default MyApp
 
 const Input = styled.input`
-    width: 50px;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 400px;
+    z-index: 10;
 `
 
 const theme = ({
@@ -98,9 +121,13 @@ const theme = ({
 })
 
 const Article = styled.article`
+    width:  100vw;
+    height: 100vh;
     background-color:  #FDFAF7 ;
-    width:  100%;
-    height: 100%;
+    @media (max-width: 750px) {
+        width: 100%;
+        height: 100%;
+    }
 `
 
 const Box = styled.div`
@@ -124,11 +151,10 @@ const Box = styled.div`
         width: 100%;
         height: auto;
         display: inline;
+        position: relative;
         top: 0;
         left: 0;
         transform: none;
-        /* grid-template-columns: 1fr;
-        grid-template-rows: 0.5fr 0.3fr 0.1fr 1fr; */
     }
 `
 
@@ -148,7 +174,13 @@ const List = styled.ul`
     grid-row: 2/3;
     margin: 30px 0px 0px 30px;
     @media (max-width: 750px) {
-        /* display: flex; */
+        display: flex;
+        margin: 40px 0;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        justify-content: space-around;
     }
 `
 
@@ -162,6 +194,8 @@ const Icons = styled.ul`
     width: 150px;
     justify-content: space-around;
     @media (max-width: 750px) {
+        margin: 30px 0;
+        width: 80%;
     }
 `
 
