@@ -12,7 +12,7 @@ const dir = String(process.env.BACKEND_URL); //path_check
 import * as gtag from '../gtag'              //google_analytics
 Router.events.on('routeChangeComplete', url => gtag.pageview(url))
 
-const MyApp = ({ Component, pageProps }: AppProps, { build_time }:any ) => {
+const MyApp = ({ Component, pageProps }: AppProps ) => {
     const router = useRouter();
     const pathname = router.pathname;
     const currentpath = pathname.substr(pathname.lastIndexOf('/')+1);
@@ -36,10 +36,6 @@ const MyApp = ({ Component, pageProps }: AppProps, { build_time }:any ) => {
         console.log('click')
     }
     
-    // console.log(props)
-    console.log({build_time})
-    console.log({build_time}.build_time)
-    const time = {build_time}.build_time
 
     return (
     <>
