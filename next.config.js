@@ -6,4 +6,5 @@ const debug = process.env.NODE_ENV !== 'production'
 
 module.exports = {
     assetPrefix: process.env.GITHUB_PAGES ? '/myportfolio' : '',
+    'process.env.GOOGLE_ANALYTICS_ID' : 'UA-174249701-1'
 }

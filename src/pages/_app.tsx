@@ -2,11 +2,13 @@ import * as React from 'react'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import Link from 'next/link';
-import { useRouter } from 'next/router'
+import Router, { useRouter } from 'next/router'
 import styled, { ThemeProvider } from 'styled-components'
 import '../@types/styled.d.ts';
 import { H1,A,Link_h2,Img,Icon,Card } from '../styled/index'
-const dir = String(process.env.BACKEND_URL);
+const dir = String(process.env.BACKEND_URL); //path.check
+import * as gtag from '../gtag'              //google.analytics
+Router.events.on('routeChangeComplete', url => gtag.pageview(url))
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
     const pathname = useRouter().pathname;
@@ -101,6 +103,7 @@ const Article = styled.article`
 `
 
 const Box = styled.div`
+    background-color:  #FDFAF7 ;
     width: 770px;
     height: 550px;
     color: #525252;

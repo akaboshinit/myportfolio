@@ -1,20 +1,9 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import {ServerStyleSheet} from 'styled-components';
 const dir = String(process.env.BACKEND_URL);
+import { GA_TRACKING_ID } from '../gtag'
 
-type Props = {
-    styleTags: any;
-};
-
-export default class MyDocument extends Document<Props> {
-    // static getInitialProps({renderPage}:{renderPage:any}) {
-    //     const sheet = new ServerStyleSheet();
-    //     const page = renderPage((App:any) => (props:any) =>
-    //         sheet.collectStyles(<App {...props} />),
-    //     );
-    //     const styleTags = sheet.getStyleElement();
-    //     return {...page, styleTags};
-    // }
+export default class MyDocument extends Document {
     static async getInitialProps(ctx:any) {
         const sheet = new ServerStyleSheet()
         const originalRenderPage = ctx.renderPage
@@ -50,7 +39,18 @@ export default class MyDocument extends Document<Props> {
                     <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css"></link>
                     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700"></link>
                     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"></link>
-                    {/* {this.props.styleTags} */}
+                    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}/>
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                            gtag('config', '${GA_TRACKING_ID}', {
+                            page_path: window.location.pathname,
+                            });`,
+                        }}
+                    />
                 </Head>
             <body>
                 <Main />
