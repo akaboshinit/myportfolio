@@ -12,7 +12,7 @@ const dir = String(process.env.BACKEND_URL); //path_check
 import * as gtag from '../gtag'              //google_analytics
 Router.events.on('routeChangeComplete', url => gtag.pageview(url))
 
-const MyApp = ({ Component, pageProps }: AppProps, { build_time }:any ) => {
+const MyApp = ({ Component, pageProps }: AppProps ) => {
     const router = useRouter();
     const pathname = router.pathname;
     const currentpath = pathname.substr(pathname.lastIndexOf('/')+1);
@@ -35,11 +35,6 @@ const MyApp = ({ Component, pageProps }: AppProps, { build_time }:any ) => {
     const aa = () =>{
         console.log('click')
     }
-    
-    // console.log(props)
-    console.log({build_time})
-    console.log({build_time}.build_time)
-    const time = {build_time}.build_time
 
     return (
     <>
@@ -84,21 +79,11 @@ const MyApp = ({ Component, pageProps }: AppProps, { build_time }:any ) => {
                         <Component {...pageProps} />
                     </Card>
                 </Divprece>
-                <div>{time}aaa</div>
             </Box>
         </Article>
     </ThemeProvider>
     </>
     )
-}
-
-export const getStaticProps = (context:any) => {
-    const build_time = new Date().toString();
-    return {
-        props: {
-            build_time
-        },
-    }
 }
 
 export default MyApp
