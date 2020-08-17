@@ -33,7 +33,7 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
         default:
     }
     const aa = () =>{
-        console.log('click')
+        console.log('click:'+currentpath)
     }
 
     return (
@@ -74,7 +74,6 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
                 </Icons>
                 <Divprece>
                     <Card>
-                        <div>{currentpath}</div>
                         <Input type="button"onClick={()=>aa()} />
                         <Component {...pageProps} />
                     </Card>
