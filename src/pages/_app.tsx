@@ -3,14 +3,16 @@ import { AppProps } from 'next/app'
 import Head from 'next/head'
 import Link from 'next/link';
 import Router, { useRouter } from 'next/router'
+
 import styled, { ThemeProvider } from 'styled-components'
 import '../@types/styled.d.ts';
 import { H1,A,Link_h2,Img,Icon,Card } from '../styled/index'
+
 const dir = String(process.env.BACKEND_URL); //path.check
 import * as gtag from '../gtag'              //google.analytics
 Router.events.on('routeChangeComplete', url => gtag.pageview(url))
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({ Component, pageProps }: AppProps ,{ build_time }: any ) => {
     const pathname = useRouter().pathname;
     const currentpath = pathname.substr(pathname.lastIndexOf('/')+1);
     let About,Profile,Task,Others = false;
@@ -33,6 +35,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     const aa = () =>{
         console.log('click')
     }
+    console.log(build_time)
 
     return (
     <>
@@ -85,6 +88,15 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 }
 
 export default MyApp
+
+MyApp.getStaticProps = () => {
+    const build_time = new Date().toString();
+    return {
+        props: {
+            build_time
+        }
+    }
+}
 
 const Input = styled.input`
     width: 50px;
