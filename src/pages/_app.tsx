@@ -80,7 +80,7 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
                         <Component {...pageProps} />
                     </Card>
                 </Divprece>
-                <div>{time}aaa</div>
+                <div>aaa</div>
             </Box>
         </Article>
     </ThemeProvider>
