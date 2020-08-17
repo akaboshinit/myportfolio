@@ -94,7 +94,16 @@ const MyApp = ({ Component, pageProps }: AppProps, { build_time }:any ) => {
 
 export default MyApp
 
-export const getStaticProps = async () => {
+// export const getStaticProps = () => {
+//     // ビルド時刻の取得
+//     const build_time = new Date().toString();
+//     return {
+//         props: {
+//             build_time
+//         },
+//     }
+// }
+export async function getStaticProps() {
     // ビルド時刻の取得
     const build_time = new Date().toString();
     return {
