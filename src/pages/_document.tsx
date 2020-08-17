@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import {ServerStyleSheet} from 'styled-components';
+import styled,{ServerStyleSheet} from 'styled-components';
 const dir = String(process.env.BACKEND_URL);
 import { GA_TRACKING_ID } from '../gtag'
 
@@ -53,7 +53,7 @@ export default class MyDocument extends Document {
                         }}
                     />
                 </Head>
-            <body>
+            <body >
                 <Main />
                 <NextScript />
             </body>

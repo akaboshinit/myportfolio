@@ -110,7 +110,7 @@ const Input = styled.input`
     width: 100px;
     height: 100px;
     position: absolute;
-    top: 400px;
+    top: 500px;
     z-index: 10;
 `
 
@@ -121,41 +121,41 @@ const theme = ({
 })
 
 const Article = styled.article`
+    overflow: hidden;
     width:  100vw;
     height: 100vh;
     background-color:  #FDFAF7 ;
+    display: grid;
+    place-items: center;
     @media (max-width: 750px) {
-        width: 100%;
-        height: 100%;
+        overflow: visible;
+        width: auto;
+        height: 100vh;
+        place-items: start;
     }
 `
 
 const Box = styled.div`
-    background-color:  #FDFAF7 ;
-    width: 770px;
     height: 550px;
+    width: 770px;
+    background-color:  #FDFAF7 ;
     color: #525252;
     font-family: 'Lato,Noto Sans Japanese, sans-serif';
     font-size: 1em;
     cursor: default;
-    /* center */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    /*  */
     display: grid;
     grid-template-columns: 220px 550px;
-    grid-template-rows: 1fr 1fr 0.3fr;
+    grid-template-rows: 220px 220px 110px;
     @media (max-width: 750px) {
         width: 100%;
-        height: auto;
         display: inline;
-        position: relative;
-        top: 0;
-        left: 0;
-        transform: none;
     }
+    /* center */
+    /* position: relative;
+    top: 75%;
+    left: 75%;
+    transform: translate(-50%,-50%); */
+    /*  */
 `
 
 const Divpro = styled.div`
