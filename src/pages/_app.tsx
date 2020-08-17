@@ -39,7 +39,7 @@ const MyApp = ({ Component, pageProps }: AppProps, { build_time }:any ) => {
     // console.log(props)
     console.log({build_time})
     console.log({build_time}.build_time)
-    let time = {build_time}.build_time
+    const time = {build_time}.build_time
 
     return (
     <>
@@ -84,7 +84,7 @@ const MyApp = ({ Component, pageProps }: AppProps, { build_time }:any ) => {
                         <Component {...pageProps} />
                     </Card>
                 </Divprece>
-                <div>{time}</div>
+                <div>{time}aaa</div>
             </Box>
         </Article>
     </ThemeProvider>
@@ -92,19 +92,7 @@ const MyApp = ({ Component, pageProps }: AppProps, { build_time }:any ) => {
     )
 }
 
-export default MyApp
-
-// export const getStaticProps = () => {
-//     // ビルド時刻の取得
-//     const build_time = new Date().toString();
-//     return {
-//         props: {
-//             build_time
-//         },
-//     }
-// }
-export async function getStaticProps() {
-    // ビルド時刻の取得
+export const getStaticProps = async (context:any) => {
     const build_time = new Date().toString();
     return {
         props: {
@@ -112,6 +100,8 @@ export async function getStaticProps() {
         },
     }
 }
+
+export default MyApp
 
 const Input = styled.input`
     width: 50px;
