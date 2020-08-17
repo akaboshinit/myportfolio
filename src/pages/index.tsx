@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
+import Router from 'next/router'
 
 const Index = (props : any) => {
   console.log('Render!!');
+  useEffect(() => { //redirect
+    const {pathname} = Router
+    if(pathname == '/' ){
+        Router.push('/category/about')
+    }
+  });
   return (
     <>
       <div>
@@ -12,12 +19,5 @@ const Index = (props : any) => {
     </>
   )
 }
-
-// Index.getInitialProps = async ({ res }:any) => {
-//   if (res) {
-//       res.writeHead(302, { Location: '/category/about' });
-//       res.end();
-//   }
-// }
 
 export default Index;

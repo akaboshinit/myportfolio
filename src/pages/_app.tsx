@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useEffect } from 'react'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import Link from 'next/link';
@@ -8,12 +8,13 @@ import styled, { ThemeProvider } from 'styled-components'
 import '../@types/styled.d.ts';
 import { H1,A,Link_h2,Img,Icon,Card } from '../styled/index'
 
-const dir = String(process.env.BACKEND_URL); //path.check
-import * as gtag from '../gtag'              //google.analytics
+const dir = String(process.env.BACKEND_URL); //path_check
+import * as gtag from '../gtag'              //google_analytics
 Router.events.on('routeChangeComplete', url => gtag.pageview(url))
 
-const MyApp = ({ Component, pageProps }: AppProps ,{ build_time }: any ) => {
-    const pathname = useRouter().pathname;
+const MyApp = ({ Component, pageProps }: AppProps, { build_time }:any ) => {
+    const router = useRouter();
+    const pathname = router.pathname;
     const currentpath = pathname.substr(pathname.lastIndexOf('/')+1);
     let About,Profile,Task,Others = false;
     switch(currentpath){
@@ -31,11 +32,13 @@ const MyApp = ({ Component, pageProps }: AppProps ,{ build_time }: any ) => {
             break
         default:
     }
-    
     const aa = () =>{
         console.log('click')
     }
-    console.log(build_time)
+    
+    console.log({build_time})
+    const time = {build_time}.build_time
+    console.log(time)
 
     return (
     <>
@@ -80,6 +83,7 @@ const MyApp = ({ Component, pageProps }: AppProps ,{ build_time }: any ) => {
                         <Component {...pageProps} />
                     </Card>
                 </Divprece>
+                <div>{time}</div>
             </Box>
         </Article>
     </ThemeProvider>
@@ -89,12 +93,13 @@ const MyApp = ({ Component, pageProps }: AppProps ,{ build_time }: any ) => {
 
 export default MyApp
 
-MyApp.getStaticProps = () => {
+MyApp.getStaticProps = async () => {
+    // ビルド時刻の取得
     const build_time = new Date().toString();
     return {
         props: {
             build_time
-        }
+        },
     }
 }
 
