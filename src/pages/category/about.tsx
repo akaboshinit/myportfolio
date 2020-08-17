@@ -3,9 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { H2 } from '../../styled/index'
 
-const About = ( props:any ,{ time }:any) => {
-  console.log({time})
-  const timea = {time}.time
+const About = ( props:any ) => {
   return(
     <>
       <Head>
@@ -16,7 +14,7 @@ const About = ( props:any ,{ time }:any) => {
         <a>Home</a>
       </Link>
       <H2>{props.pathname}</H2>
-      <div>{timea}aaa</div>
+      <div>aaa</div>
     </>
   )
 }
@@ -33,13 +31,5 @@ const About = ( props:any ,{ time }:any) => {
 //   // }
 //   return { a:'a' }
 // }
-export const getStaticProps = async (context:any) => {
-  const time = new Date().toString();
-  return{
-    props: {
-      time
-    }
-  }
-}
 
 export default About;
