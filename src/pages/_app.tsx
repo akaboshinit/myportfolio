@@ -44,11 +44,11 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
     <ThemeProvider theme={theme}>
         <Article>
             <Box>
-                <Divpro>
+                <Divpro className="animate__animated animate__hinge animate__slower animate__infinite">
                     <Img width="180px" height="180px" src={dir+'/images/main_circle.png'} />
                     <H1>akaboshinit</H1>
                 </Divpro>
-                <List>
+                <List className="animate__animated animate__hinge animate__slower animate__delay-1s">
                     <Link href="/category/about" as={dir+'/category/about'}>
                         <Link_h2 currentpath={About}>About</Link_h2>
                     </Link>
@@ -66,13 +66,13 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
                     </Link>
                     <div></div>
                 </List>
-                <Icons>
+                <Icons className="animate__animated animate__hinge animate__slower animate__delay-5s">
                     <A href="https://www.instagram.com/akaboshinit/?hl=ja"><Icon className="fab fa-2x fa-instagram"></Icon></A>
                     <A href="https://twitter.com/akaboshinit"><Icon className="fab fa-2x fa-twitter"></Icon></A>
                     <A href="a"><Icon className="fab fa-2x fa-facebook"></Icon></A>
                     <A href="https://github.com/akaboshinit"><Icon className="fab fa-2x fa-github"></Icon></A>
                 </Icons>
-                <Divprece>
+                <Divprece className="animate__animated animate__hinge animate__slower animate__delay-5s">
                     <Card>
                         <Input type="button"onClick={()=>aa()} />
                         <Component {...pageProps} />
