@@ -36,9 +36,10 @@ const MyApp = ({ Component, pageProps }: AppProps, { build_time }:any ) => {
         console.log('click')
     }
     
+    // console.log(props)
     console.log({build_time})
-    const time = {build_time}.build_time
-    console.log(time)
+    console.log({build_time}.build_time)
+    let time = {build_time}.build_time
 
     return (
     <>
@@ -93,7 +94,7 @@ const MyApp = ({ Component, pageProps }: AppProps, { build_time }:any ) => {
 
 export default MyApp
 
-MyApp.getStaticProps = async () => {
+export const getStaticProps = async () => {
     // ビルド時刻の取得
     const build_time = new Date().toString();
     return {
