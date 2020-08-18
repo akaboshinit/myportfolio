@@ -39,16 +39,16 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
     },[click]);
 
     const a = () => {
-        let animes:any = document.getElementsByClassName('animate__animated')
+        let animes:any = document.getElementsByClassName('animated')
         if( {click}.click == false ){
             for( let i = 0; animes.length > i; i++ ){
                 const randomnum = Math.floor(Math.random()*animes.length)
-                setTimeout(()=>{animes[randomnum].classList.add('animate__hinge','animate__slower')},i*500)
+                setTimeout(()=>{animes[randomnum].classList.add('hinge')},i*500)
             }
         }
         if( {click}.click == true ){
             for( let i = 0; animes.length > i; i++ ){
-                animes[i].classList.remove('animate__hinge','animate__slower');
+                animes[i].classList.remove('hinge');
             }
         }
         toggle(!click)
@@ -63,13 +63,13 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
         <Article>
         <Input value="anime" type="button"onClick={()=>a()} />
             <Box>
-                <Divpro className="animate__animated">
+                <Divpro className="animated">
                     <Img width="180px" height="180px" src={dir+'/images/main_circle.png'} />
                     <H1>akaboshinit</H1>
                 </Divpro>
                 <List>
                     <Link href="/category/about" as={dir+'/category/about'}>
-                        <Link_h2 className="animate__animated" currentpath={About}>About</Link_h2>
+                        <Link_h2 className="animated" currentpath={About}>About</Link_h2>
                     </Link>
                     <div></div>
                     <Link href="/category/profile" as={dir+'/category/profile'}>

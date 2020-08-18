@@ -33,12 +33,12 @@ export default class MyDocument extends Document {
         <Html lang="ja">
                 <Head>
                     <meta charSet="utf-8" />
-                    <link rel="icon" type="image/jpg" href={dir+'/icon.jpg'}></link>
+                    <link rel="icon" type="image/jpg" href={dir+'/icon.jpg'}/>
                     <meta name="google-site-verification" content="XoOrJUFaeFmuY6WXOhRp40t9FrM-FWHu73TX7fLW7Eg" />
-                    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css"></link>
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css"></link>
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700"></link>
-                    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"></link>
+                    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css"/>
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css"/>
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700"/>
+                    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"/>
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css"/>
                     <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}/>
                     <script
