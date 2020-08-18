@@ -58,13 +58,14 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
     <>
     <Head>
         <title>akaboshinit</title>
+        <meta name="description" content="akaboshinitのportfolioやで" />
     </Head>
     <ThemeProvider theme={theme}>
         <Article>
         <Input value="anime" type="button"onClick={()=>a()} />
             <Box>
                 <Divpro>
-                    <Img className="animated" width="180px" height="180px" src={dir+'/images/main_circle.png'} />
+                    <Img className="animated" width="180px" height="180px" src={dir+'/images/main_circle.png'} alt="icon-image" />
                     <H1 className="animated">akaboshinit</H1>
                 </Divpro>
                 <List>
@@ -201,7 +202,7 @@ const Divprece = styled.div`
     border: black 1px solid;
     width: 550px;
     height: 550px;
-    background-color:  #FDFAF7 ;
+    /* z-index: 0; */
     @media (max-width: 750px) {
         width: 100%;
     }
