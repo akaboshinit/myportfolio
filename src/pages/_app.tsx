@@ -6,7 +6,7 @@ import Router, { useRouter } from 'next/router'
 
 import styled, { ThemeProvider } from 'styled-components'
 import '../@types/styled.d.ts';
-import { H1,A,Link_h2,Img,Icon,Card } from '../styled/index'
+import { H1,A,Link_h2,Main_img,Icon,Card } from '../styled/index'
 
 const dir = String(process.env.BACKEND_URL); //path_check
 import * as gtag from '../gtag'              //google_analytics
@@ -65,7 +65,7 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
         <Input value="anime" type="button"onClick={()=>a()} />
             <Box>
                 <Divpro>
-                    <Img className="animated" width="180px" height="180px" src={dir+'/images/main_circle.min.png'} alt="icon-image" />
+                    <Main_img className="animated" width="180px" height="180px" src={dir+'/images/main_circle.min.png'} alt="icon-image" />
                     <H1 className="animated">akaboshinit</H1>
                 </Divpro>
                 <List>
@@ -122,7 +122,7 @@ const theme = ({
 })
 
 const Article = styled.article`
-    overflow: hidden;
+    /* overflow: hidden; */
     width:  100vw;
     height: 100vh;
     background-color:  #FDFAF7 ;
@@ -135,7 +135,7 @@ const Article = styled.article`
 `
 
 const Box = styled.div`
-    background-color:  #FDFAF7 ;
+    /* background-color:  #FDFAF7 ; */
     color: #525252;
     font-family: 'Lato,Noto Sans Japanese, sans-serif';
     font-size: 1em;

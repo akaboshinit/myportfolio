@@ -1,20 +1,19 @@
 import * as React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
-import { H2 } from '../../styled/index'
+import { Img_s,Img_m,Img_l } from '../../styled/index'
+import { dir,s_size,m_size_w,m_size_h,l_size } from '../../env'
 
-const About = ( props:any ) => {
+const About = () => {
   return(
     <>
       <Head>
         <title>akaboshi-portfolio</title>
       </Head>
-      <div>Hello World.{' '}aaa</div>
-      <Link href="/" as={process.env.BACKEND_URL + '/'}>
-        <a>Home</a>
-      </Link>
-      <H2>{props.pathname}</H2>
-      <div>aaa</div>
+      <div className="animated zoomInDown">
+        <Img_s className="animated" width={s_size} height={s_size} src={dir+'/images/room.jpg'} alt="icon-image" />
+        <Img_m className="animated" width={m_size_w} height={m_size_h} src={dir+'/images/room.jpg'} alt="icon-image" />
+        <Img_l className="animated" width={l_size} height={l_size} src={dir+'/images/room.jpg'} alt="icon-image" />
+      </div>
     </>
   )
 }

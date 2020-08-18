@@ -11,7 +11,7 @@ const Link_h2 = styled.h2<{ currentpath:boolean }>`
     border-radius: 20px;
     margin-bottom: 8px;
     user-select: none;
-    background-color: ${(props) => (props.currentpath ? '#99FF99' : '#FDFAF7')};
+    background-color: ${(props) => (props.currentpath ? '#99FF99' : 'transparent')};
     @media (min-width: 751px) {
         &:hover {
             line-height: 31px;
