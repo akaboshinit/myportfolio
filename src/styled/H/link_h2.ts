@@ -16,7 +16,7 @@ const Link_h2 = styled.h2<{ currentpath:boolean }>`
         &:hover {
             line-height: 31px;
             padding-left: 11px;
-            border: 4px solid ${(props)=>props.theme.link_colors.hover_color} ;
+            border: 4px solid ${(props)=>(props.theme.link_colors.hover_color)} ;
         }
     }
     @media (max-width: 750px) {
@@ -24,7 +24,7 @@ const Link_h2 = styled.h2<{ currentpath:boolean }>`
         padding-left: 0px;
         &:hover {
             line-height: 31px;
-            border: 4px solid ${(props)=>props.theme.link_colors.hover_color};
+            border: 4px solid ${(props)=>(props.theme.link_colors.hover_color)};
         }
     }
 `

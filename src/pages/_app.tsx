@@ -6,7 +6,7 @@ import Router, { useRouter } from 'next/router'
 
 import styled, { ThemeProvider } from 'styled-components'
 import '../@types/styled.d.ts';
-import { H1,A,Link_h2,Main_img,Icon,Card } from '../styled/index'
+import { H1,A,Link_h2,Main_img,Icon } from '../styled/index'
 
 import { dir } from '../env' //path_check
 import * as gtag from '../gtag'              //google_analytics
@@ -92,11 +92,11 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
                     <A href="https://www.facebook.com/people/Akaboshi/100054261799304"><Icon className="animated fab fa-2x fa-facebook"></Icon></A>
                     <A href="https://github.com/akaboshinit"><Icon className="animated fab fa-2x fa-github"></Icon></A>
                 </Icons>
-                <Divprece >
-                    <Card>
+                <Divplece>
+                    <Card >
                         <Component {...pageProps} />
                     </Card>
-                </Divprece>
+                </Divplece>
             </Box>
         </Article>
     </ThemeProvider>
@@ -111,24 +111,24 @@ const Input = styled.input`
     width: 100px;
     height: 100px;
     position: absolute;
-    top: 500px;
+    top: 0;
     z-index: 10;
 `
 
 const theme = ({
     colors:{
-        main:  'black',
+        main:  '#525252',
         bg: '#FDFAF7',
-        hover: 'red'
+        hover: 'black'
     },
     link_colors:{
-        hover_color: 'green',
-        bg_color: 'green'
+        hover_color: '#E5E5E5',
+        bg_color: '#E5E5E5'
     }
 })
 
 const Article = styled.article`
-    overflow: hidden;
+    /* overflow: hidden; */
     width:  100%;
     height: 100vh;
     background-color:  ${(props) => (props.theme.colors.bg)};
@@ -202,13 +202,35 @@ const Icons = styled.ul`
     }
 `
 
-const Divprece = styled.div`
+const Divplece = styled.div`
     grid-column: 2/3;
     grid-row: 1/4;
-    border: black 1px solid;
-    width: 550px;
+    position:relative;
+`
+
+const Card = styled.div`
+    width: 600px;
     height: 550px;
+    color: ${(props) => (props.theme.colors.main)};
+    font-family: 'Lato, Noto Sans Japanese, sans-serif';
+    overflow-y: scroll;
+    ::-webkit-scrollbar {
+        display:none;
+    }
+    @media (min-width: 750px) {
+        &::after {
+            position: absolute;
+            width: 600px;
+            height: 551px;
+            top: 0 ; left: 0; right: 0; bottom: 0;
+            -moz-box-shadow: inset 0px 0px 10px 10px ${(props) => (props.theme.colors.bg)};
+            -webkit-box-shadow: inset 0px 0px 10px 10px ${(props) => (props.theme.colors.bg)};
+            box-shadow: inset 0px 0px 10px 10px ${(props) => (props.theme.colors.bg)};
+            content: "";
+        }
+    }
     @media (max-width: 750px) {
         width: 100%;
+        overflow-y: visible;
     }
 `

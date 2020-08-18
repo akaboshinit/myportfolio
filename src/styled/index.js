@@ -9,4 +9,5 @@ export {default as Img_l} from './Img/img_l'
 export {default as Main_img} from './Img/main_img'
 
 export {default as Icon} from './Icon/awesome-icon'
-export {default as Card} from './Card/card'
+
+export {default as Skill_card} from './Card/skil_card'

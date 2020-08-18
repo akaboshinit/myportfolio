@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Head from 'next/head';
-import { Img_s,Img_m,Img_l } from '../../styled/index'
+import styled from 'styled-components'
+import { Img_s,Img_m,Img_l,Skill_card } from '../../styled/index'
 import { dir,s_size,m_size_w,m_size_h,l_size } from '../../env'
 
 const About = () => {
@@ -9,11 +10,31 @@ const About = () => {
       <Head>
         <title>akaboshi-portfolio</title>
       </Head>
-      <div className="animated zoomInDown">
-        <Img_s className="animated" width={s_size} height={s_size} src={dir+'/images/room.jpg'} alt="icon-image" />
+      <Div className="animated zoomInDown">
+        <Skill_card>
+          <Img_s className="animated" width={s_size} height={s_size} src={dir+'/images/room.jpg'} alt="icon-image" />
+        </Skill_card>
+        <Skill_card>
+          <Img_s className="animated" width={s_size} height={s_size} src={dir+'/images/room.jpg'} alt="icon-image" />
+        </Skill_card>
+        <Skill_card>
+          <Img_s className="animated" width={s_size} height={s_size} src={dir+'/images/room.jpg'} alt="icon-image" />
+        </Skill_card>
+        <Skill_card>
+          <Img_s className="animated" width={s_size} height={s_size} src={dir+'/images/room.jpg'} alt="icon-image" />
+        </Skill_card>
+        <Skill_card>
+          <Img_s className="animated" width={s_size} height={s_size} src={dir+'/images/room.jpg'} alt="icon-image" />
+        </Skill_card>
+        <Skill_card>
+          <Img_s className="animated" width={s_size} height={s_size} src={dir+'/images/room.jpg'} alt="icon-image" />
+        </Skill_card>
+        <Skill_card>
+          <Img_s className="animated" width={s_size} height={s_size} src={dir+'/images/room.jpg'} alt="icon-image" />
+        </Skill_card>
         {/* <Img_m className="animated" width={m_size_w} height={m_size_h} src={dir+'/images/room.jpg'} alt="icon-image" />
         <Img_l className="animated" width={l_size} height={l_size} src={dir+'/images/room.jpg'} alt="icon-image" /> */}
-      </div>
+      </Div>
     </>
   )
 }
@@ -30,5 +51,11 @@ const About = () => {
 //   // }
 //   return { a:'a' }
 // }
+
+const Div = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`
 
 export default About;
