@@ -43,7 +43,7 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
         if( {click}.click == false ){
             for( let i = 0; animes.length > i; i++ ){
                 const randomnum = Math.floor(Math.random()*animes.length)
-                setTimeout(()=>{animes[randomnum].classList.add('hinge')},i*500)
+                setTimeout(()=>{animes[randomnum].classList.add('hinge')},i*250)
             }
         }
         if( {click}.click == true ){
@@ -63,9 +63,9 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
         <Article>
         <Input value="anime" type="button"onClick={()=>a()} />
             <Box>
-                <Divpro className="animated">
-                    <Img width="180px" height="180px" src={dir+'/images/main_circle.png'} />
-                    <H1>akaboshinit</H1>
+                <Divpro>
+                    <Img className="animated" width="180px" height="180px" src={dir+'/images/main_circle.png'} />
+                    <H1 className="animated">akaboshinit</H1>
                 </Divpro>
                 <List>
                     <Link href="/category/about" as={dir+'/category/about'}>
@@ -73,25 +73,25 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
                     </Link>
                     <div></div>
                     <Link href="/category/profile" as={dir+'/category/profile'}>
-                        <Link_h2 className="animate__animated" currentpath={Profile}>Profile</Link_h2>
+                        <Link_h2 className="animated" currentpath={Profile}>Profile</Link_h2>
                     </Link>
                     <div></div>
                     <Link href="/category/task" as={dir+'/category/task'}>
-                        <Link_h2 className="animate__animated" currentpath={Task}>Task</Link_h2>
+                        <Link_h2 className="animated" currentpath={Task}>Task</Link_h2>
                     </Link>
                     <div></div>
                     <Link href="/category/others" as={dir+'/category/others'}>
-                        <Link_h2 className="animate__animated" currentpath={Others}>Others</Link_h2>
+                        <Link_h2 className="animated" currentpath={Others}>Others</Link_h2>
                     </Link>
                     <div></div>
                 </List>
                 <Icons >
-                    <A href="https://www.instagram.com/akaboshinit/?hl=ja"><Icon className="animate__animated fab fa-2x fa-instagram"></Icon></A>
-                    <A href="https://twitter.com/akaboshinit"><Icon className="animate__animated fab fa-2x fa-twitter"></Icon></A>
-                    <A href="a"><Icon className="animate__animated fab fa-2x fa-facebook"></Icon></A>
-                    <A href="https://github.com/akaboshinit"><Icon className="animate__animated fab fa-2x fa-github"></Icon></A>
+                    <A href="https://www.instagram.com/akaboshinit/?hl=ja"><Icon className="animated fab fa-2x fa-instagram"></Icon></A>
+                    <A href="https://twitter.com/akaboshinit"><Icon className="animated fab fa-2x fa-twitter"></Icon></A>
+                    <A href="a"><Icon className="animated fab fa-2x fa-facebook"></Icon></A>
+                    <A href="https://github.com/akaboshinit"><Icon className="animated fab fa-2x fa-github"></Icon></A>
                 </Icons>
-                <Divprece className="animate__animated">
+                <Divprece className="animated">
                     <Card>
                         <Component {...pageProps} />
                     </Card>
@@ -125,6 +125,7 @@ const Article = styled.article`
     width:  100vw;
     height: 100vh;
     background-color:  #FDFAF7 ;
+    /* background-color:  red ; */
     display: grid;
     place-items: center;
     @media (max-width: 750px) {
@@ -205,6 +206,7 @@ const Divprece = styled.div`
     border: black 1px solid;
     width: 550px;
     height: 550px;
+    background-color:  #FDFAF7 ;
     @media (max-width: 750px) {
         width: 100%;
     }

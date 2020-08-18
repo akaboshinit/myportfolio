@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import styled,{ServerStyleSheet} from 'styled-components';
+import {ServerStyleSheet} from 'styled-components';
 const dir = String(process.env.BACKEND_URL);
 import { GA_TRACKING_ID } from '../gtag'
 
