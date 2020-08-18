@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const H1 = styled.h1`
-    color: #525252;
+    color: ${(props) => (props.theme.colors.main)};
     font-size: 1.5em;
     font-family: 'Noto Sans Japanese,Roboto Condensed, sans-serif';
     line-height: 20px;

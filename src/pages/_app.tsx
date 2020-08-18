@@ -8,7 +8,7 @@ import styled, { ThemeProvider } from 'styled-components'
 import '../@types/styled.d.ts';
 import { H1,A,Link_h2,Main_img,Icon,Card } from '../styled/index'
 
-const dir = String(process.env.BACKEND_URL); //path_check
+import { dir } from '../env' //path_check
 import * as gtag from '../gtag'              //google_analytics
 Router.events.on('routeChangeComplete', url => gtag.pageview(url))
 
@@ -92,7 +92,7 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
                     <A href="https://www.facebook.com/people/Akaboshi/100054261799304"><Icon className="animated fab fa-2x fa-facebook"></Icon></A>
                     <A href="https://github.com/akaboshinit"><Icon className="animated fab fa-2x fa-github"></Icon></A>
                 </Icons>
-                <Divprece className="animated">
+                <Divprece >
                     <Card>
                         <Component {...pageProps} />
                     </Card>
@@ -103,7 +103,7 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
     </>
     )
 }
-// className="animate__animated animate__hinge animate__slower"
+// className="animated hinge slower"
 
 export default MyApp
 
@@ -117,26 +117,32 @@ const Input = styled.input`
 
 const theme = ({
     colors:{
-        light:  'white' 
+        main:  'black',
+        bg: '#FDFAF7',
+        hover: 'red'
     },
+    link_colors:{
+        hover_color: 'green',
+        bg_color: 'green'
+    }
 })
 
 const Article = styled.article`
-    /* overflow: hidden; */
-    width:  100vw;
+    overflow: hidden;
+    width:  100%;
     height: 100vh;
-    background-color:  #FDFAF7 ;
+    background-color:  ${(props) => (props.theme.colors.bg)};
     display: grid;
     place-items: center;
     @media (max-width: 750px) {
-        overflow: hidden;
+        /* height: 100%; */
+        overflow: visible;
         place-items: start;
     }
 `
 
 const Box = styled.div`
-    /* background-color:  #FDFAF7 ; */
-    color: #525252;
+    color: ${(props) => (props.theme.colors.main)};
     font-family: 'Lato,Noto Sans Japanese, sans-serif';
     font-size: 1em;
     cursor: default;
@@ -202,7 +208,6 @@ const Divprece = styled.div`
     border: black 1px solid;
     width: 550px;
     height: 550px;
-    /* z-index: 0; */
     @media (max-width: 750px) {
         width: 100%;
     }

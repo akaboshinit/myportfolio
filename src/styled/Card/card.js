@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Card = styled.div`
-    color: #525252;
+    color: ${(props) => (props.theme.colors.main)};
     font-family: 'Lato, Noto Sans Japanese, sans-serif';
 `
 

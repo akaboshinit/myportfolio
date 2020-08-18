@@ -11,8 +11,8 @@ const About = () => {
       </Head>
       <div className="animated zoomInDown">
         <Img_s className="animated" width={s_size} height={s_size} src={dir+'/images/room.jpg'} alt="icon-image" />
-        <Img_m className="animated" width={m_size_w} height={m_size_h} src={dir+'/images/room.jpg'} alt="icon-image" />
-        <Img_l className="animated" width={l_size} height={l_size} src={dir+'/images/room.jpg'} alt="icon-image" />
+        {/* <Img_m className="animated" width={m_size_w} height={m_size_h} src={dir+'/images/room.jpg'} alt="icon-image" />
+        <Img_l className="animated" width={l_size} height={l_size} src={dir+'/images/room.jpg'} alt="icon-image" /> */}
       </div>
     </>
   )

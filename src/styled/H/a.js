@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
 const A = styled.a`
-    color: #525252;
+    color: ${(props) => (props.theme.colors.main)};
     padding: 0px;
     margin: 0px;
     height: 30px;
     &:hover {
-        color: black;
+        color: ${(props) => (props.theme.colors.hover)};
     }
 `
 

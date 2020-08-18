@@ -11,12 +11,12 @@ const Link_h2 = styled.h2<{ currentpath:boolean }>`
     border-radius: 20px;
     margin-bottom: 8px;
     user-select: none;
-    background-color: ${(props) => (props.currentpath ? '#99FF99' : 'transparent')};
+    background-color: ${(props) => (props.currentpath ? props.theme.link_colors.bg_color : 'transparent')};
     @media (min-width: 751px) {
         &:hover {
             line-height: 31px;
             padding-left: 11px;
-            border: #99FF99 4px solid;
+            border: 4px solid ${(props)=>props.theme.link_colors.hover_color} ;
         }
     }
     @media (max-width: 750px) {
@@ -24,7 +24,7 @@ const Link_h2 = styled.h2<{ currentpath:boolean }>`
         padding-left: 0px;
         &:hover {
             line-height: 31px;
-            border: #99FF99 4px solid;
+            border: 4px solid ${(props)=>props.theme.link_colors.hover_color};
         }
     }
 `
