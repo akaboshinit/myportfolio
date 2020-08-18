@@ -65,7 +65,7 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
         <Input value="anime" type="button"onClick={()=>a()} />
             <Box>
                 <Divpro>
-                    <Img className="animated" width="180px" height="180px" src={dir+'/images/main_circle.png'} alt="icon-image" />
+                    <Img className="animated" width="180px" height="180px" src={dir+'/images/main_circle.min.png'} alt="icon-image" />
                     <H1 className="animated">akaboshinit</H1>
                 </Divpro>
                 <List>
