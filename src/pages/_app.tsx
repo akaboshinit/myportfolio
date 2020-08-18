@@ -88,7 +88,7 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
                 <Icons >
                     <A href="https://www.instagram.com/akaboshinit/?hl=ja"><Icon className="animated fab fa-2x fa-instagram"></Icon></A>
                     <A href="https://twitter.com/akaboshinit"><Icon className="animated fab fa-2x fa-twitter"></Icon></A>
-                    <A href="a"><Icon className="animated fab fa-2x fa-facebook"></Icon></A>
+                    <A href="https://www.facebook.com/people/Akaboshi/100054261799304"><Icon className="animated fab fa-2x fa-facebook"></Icon></A>
                     <A href="https://github.com/akaboshinit"><Icon className="animated fab fa-2x fa-github"></Icon></A>
                 </Icons>
                 <Divprece className="animated">
@@ -125,20 +125,15 @@ const Article = styled.article`
     width:  100vw;
     height: 100vh;
     background-color:  #FDFAF7 ;
-    /* background-color:  red ; */
     display: grid;
     place-items: center;
     @media (max-width: 750px) {
-        overflow: visible;
-        width: auto;
-        height: 100vh;
+        overflow: hidden;
         place-items: start;
     }
 `
 
 const Box = styled.div`
-    height: 550px;
-    width: 770px;
     background-color:  #FDFAF7 ;
     color: #525252;
     font-family: 'Lato,Noto Sans Japanese, sans-serif';
@@ -148,7 +143,7 @@ const Box = styled.div`
     grid-template-columns: 220px 550px;
     grid-template-rows: 220px 220px 110px;
     @media (max-width: 750px) {
-        width: 100%;
+        width: 100vw;
         display: inline;
     }
     /* center */
