@@ -35,8 +35,27 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
 
     const [click, toggle] = useState(false)
     useEffect(() => {
-        console.log('click:'+{click}.click+':'+currentpath)
-    },[click]);
+        const options:any = {
+            root: null,
+            rootMargin: "0px 0px -150px",
+            threshold: 0
+        }
+        const slide = document.querySelectorAll('.slide')
+        slide.forEach((target) => onIntersect(target,options))
+        function onIntersect(target:any, options = {}) {
+            const observer = new IntersectionObserver(addShowClass, options)
+            observer.observe(target)
+        }
+        function addShowClass(entries:any) {
+            for(const e of entries) {
+                if (e.isIntersecting) {
+                    e.target.classList.add("show")
+                    // e.target.classList.add("animated")
+                    // e.target.classList.add("zoomInDown")
+                }
+            }
+        }
+    },[currentpath]);
 
     const a = () => {
         let animes:any = document.getElementsByClassName('animated')
@@ -98,6 +117,19 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
                     </Card>
                 </Divplece>
             </Box>
+        <style jsx global>
+            {`
+                .slide {
+                    opacity: 0;
+                    transform: translateY(60px);
+                    transition: opacity 1s, transform 0.8s;
+                }
+                .show {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            `}
+        </style>
         </Article>
     </ThemeProvider>
     </>

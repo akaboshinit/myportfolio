@@ -1,29 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 
 const Others = (props : any) => {
-
-    useEffect(() => { 
-        const options:any = {
-            root: null,
-            rootMargin: "0px 0px -200px",
-            threshold: 0
-        }
-        const slide = document.querySelectorAll('.slide')
-        slide.forEach((target) => onIntersect(target,options))
-        function onIntersect(target:any, options = {}) {
-            const observer = new IntersectionObserver(addShowClass, options)
-            observer.observe(target)
-        }
-        function addShowClass(entries:any) {
-            for(const e of entries) {
-                if (e.isIntersecting) {
-                    e.target.classList.add("slide_show")
-                }
-            }
-        }
-    },[]);
 
 return (
 <>

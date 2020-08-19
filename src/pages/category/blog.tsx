@@ -9,8 +9,9 @@ const Blog = () => {
       <Head>
         <title>akaboshi-portfolio</title>
       </Head>
-      <Div className="animated zoomInDown">
+      <Div>
           <Img_card
+            className="slide"
             img="black.jpg"
             title="準備中"
             content="まだ準備中です/////"

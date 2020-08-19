@@ -4,29 +4,6 @@ import { Img_card } from '../../components/index';
 
 const Works = () => {
 
-    useEffect(() => { 
-        const options:any = {
-            root: null,
-            rootMargin: "0px 0px -150px",
-            threshold: 0
-        }
-        const slide = document.querySelectorAll('.slide')
-        slide.forEach((target) => onIntersect(target,options))
-        function onIntersect(target:any, options = {}) {
-            const observer = new IntersectionObserver(addShowClass, options)
-            observer.observe(target)
-        }
-        function addShowClass(entries:any) {
-            for(const e of entries) {
-                if (e.isIntersecting) {
-                    e.target.classList.add("show")
-                    // e.target.classList.add("animated")
-                    // e.target.classList.add("zoomInDown")
-                }
-            }
-        }
-    },[]);
-
 return (
 <>
     <Div>
@@ -61,7 +38,7 @@ return (
             content="aa"
         />
     </Div>
-    <style jsx global>
+    {/* <style jsx global>
         {`
             .slide {
                 opacity: 0;
@@ -73,7 +50,7 @@ return (
                 transform: translateY(0);
             }
         `}
-    </style>
+    </style> */}
 </>
 )
 }
