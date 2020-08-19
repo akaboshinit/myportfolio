@@ -1,16 +1,29 @@
 import React from 'react';
-import Link from 'next/link';
-import styled from 'styled-components';
+import styled from 'styled-components'
+import { Imgcard } from '../../components/index';
 
 const Profile = (props : any) => {
 
 return (
 <>
-    <div>
-        Profile
-    </div>
+    <Div>
+        <Imgcard
+            className="slide"
+            size="M"
+            img="room.jpg"
+            title=""
+            content=""
+        />
+    </Div>
+    <div>あ</div>
 </>
 )
 }
+
+const Div = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+`
 
 export default Profile;

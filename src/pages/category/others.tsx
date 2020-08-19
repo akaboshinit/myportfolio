@@ -3,7 +3,6 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 const Others = (props : any) => {
-
 return (
 <>
     <div>

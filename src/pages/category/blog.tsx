@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components'
-import { Img_card } from '../../components/index';
+import { Imgcard } from '../../components/index';
 
 const Blog = () => {
   return(
@@ -10,8 +10,9 @@ const Blog = () => {
         <title>akaboshi-portfolio</title>
       </Head>
       <Div>
-          <Img_card
+          <Imgcard
             className="slide"
+            size="S"
             img="black.jpg"
             title="準備中"
             content="まだ準備中です/////"

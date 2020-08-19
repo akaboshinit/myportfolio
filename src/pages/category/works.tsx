@@ -1,56 +1,48 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { Img_card } from '../../components/index';
+import { Imgcard } from '../../components/index';
 
 const Works = () => {
 
 return (
 <>
     <Div>
-        <Img_card
+        <Imgcard
             className="slide"
+            size="S"
             img="room.jpg"
             title="大学通知LINE.bot"
             content="大学のポータルサイトの.通知の利便性を改善すべく、.LINEと連携して随時通知を送る.プログラム"
         />
-        <Img_card
+        <Imgcard
             className="slide"
+            size="S"
             img="room.jpg"
             title="bb"
             content="aa"
         />
-        <Img_card
+        <Imgcard
             className="slide"
+            size="S"
             img="room.jpg"
             title="bb"
             content="aa"
         />
-        <Img_card
+        <Imgcard
             className="slide"
+            size="S"
             img="room.jpg"
             title="bb"
             content="aa"
         />
-        <Img_card
+        <Imgcard
             className="slide"
+            size="S"
             img="room.jpg"
             title="bb"
             content="aa"
         />
     </Div>
-    {/* <style jsx global>
-        {`
-            .slide {
-                opacity: 0;
-                transform: translateY(60px);
-                transition: opacity 1s, transform 0.8s;
-            }
-            .show {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        `}
-    </style> */}
 </>
 )
 }

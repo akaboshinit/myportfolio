@@ -37,7 +37,7 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
     useEffect(() => {
         const options:any = {
             root: null,
-            rootMargin: "0px 0px -150px",
+            rootMargin: "0px 0px -120px",
             threshold: 0
         }
         const slide = document.querySelectorAll('.slide')
@@ -242,6 +242,7 @@ const Divplece = styled.div`
 const Card = styled.div`
     width: 650px;
     height: 550px;
+    padding: 0 10px;
     color: ${(props) => (props.theme.colors.main)};
     font-family: 'Lato, Noto Sans Japanese, sans-serif';
     overflow-y: scroll;
