@@ -16,16 +16,16 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
     const router = useRouter();
     const pathname = router.pathname;
     const currentpath = pathname.substr(pathname.lastIndexOf('/')+1);
-    let About,Profile,Task,Others = false;
+    let Profile,Blog,Works,Others = false;
     switch(currentpath){
-        case 'about':
-            About = true;
-            break
         case 'profile':
             Profile = true;
             break
-        case 'task':
-            Task = true;
+        case 'blog':
+            Blog = true;
+            break
+        case 'works':
+            Works = true;
             break
         case 'others':
             Others = true;
@@ -66,19 +66,19 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
             <Box>
                 <Divpro>
                     <Main_img className="animated" width="180px" height="180px" src={dir+'/images/main_circle.min.png'} alt="icon-image" />
-                    <H1 className="animated">akaboshinit</H1>
+                    <H1 className="animated bbb">akaboshinit</H1>
                 </Divpro>
                 <List>
-                    <Link href="/category/about" as={dir+'/category/about'}>
-                        <Link_h2 className="animated" currentpath={About}>About</Link_h2>
-                    </Link>
-                    <div></div>
                     <Link href="/category/profile" as={dir+'/category/profile'}>
                         <Link_h2 className="animated" currentpath={Profile}>Profile</Link_h2>
                     </Link>
                     <div></div>
-                    <Link href="/category/task" as={dir+'/category/task'}>
-                        <Link_h2 className="animated" currentpath={Task}>Task</Link_h2>
+                    <Link href="/category/blog" as={dir+'/category/blog'}>
+                        <Link_h2 className="animated" currentpath={Blog}>Blog</Link_h2>
+                    </Link>
+                    <div></div>
+                    <Link href="/category/works" as={dir+'/category/works'}>
+                        <Link_h2 className="animated" currentpath={Works}>Works</Link_h2>
                     </Link>
                     <div></div>
                     <Link href="/category/others" as={dir+'/category/others'}>
@@ -128,14 +128,13 @@ const theme = ({
 })
 
 const Article = styled.article`
-    /* overflow: hidden; */
+    overflow: hidden;
     width:  100%;
     height: 100vh;
     background-color:  ${(props) => (props.theme.colors.bg)};
     display: grid;
     place-items: center;
     @media (max-width: 750px) {
-        /* height: 100%; */
         overflow: visible;
         place-items: start;
     }
@@ -209,7 +208,7 @@ const Divplece = styled.div`
 `
 
 const Card = styled.div`
-    width: 600px;
+    width: 650px;
     height: 550px;
     color: ${(props) => (props.theme.colors.main)};
     font-family: 'Lato, Noto Sans Japanese, sans-serif';
@@ -220,12 +219,12 @@ const Card = styled.div`
     @media (min-width: 750px) {
         &::after {
             position: absolute;
-            width: 600px;
+            width: 650px;
             height: 551px;
             top: 0 ; left: 0; right: 0; bottom: 0;
-            -moz-box-shadow: inset 0px 0px 10px 10px ${(props) => (props.theme.colors.bg)};
-            -webkit-box-shadow: inset 0px 0px 10px 10px ${(props) => (props.theme.colors.bg)};
-            box-shadow: inset 0px 0px 10px 10px ${(props) => (props.theme.colors.bg)};
+            -moz-box-shadow: inset 0px 0px 5px 5px ${(props) => (props.theme.colors.bg)};
+            -webkit-box-shadow: inset 0px 0px 5px 5px ${(props) => (props.theme.colors.bg)};
+            box-shadow: inset 0px 0px 5px 5px ${(props) => (props.theme.colors.bg)};
             content: "";
         }
     }

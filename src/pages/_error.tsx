@@ -20,7 +20,6 @@ const Error = (props : any) => {
 
 const C = styled.div`
     position: 'relative';
-    top: '50%';
 `
 
 const Center = styled.div`

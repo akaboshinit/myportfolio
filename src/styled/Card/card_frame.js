@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
-const Skill_card = styled.div`
+const Card_frame = styled.div`
     margin: 10px;
     padding: 10px;
-    width: 220px;
+    width: 250px;
     background: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px #ccc;
 `
 
-export default Skill_card
+export default Card_frame
