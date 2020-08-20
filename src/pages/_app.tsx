@@ -33,7 +33,6 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
         default:
     }
 
-    const [click, toggle] = useState(false)
     useEffect(() => {
         const options:any = {
             root: null,
@@ -57,7 +56,8 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
         }
     },[currentpath]);
 
-    const a = () => {
+    const [click, toggle] = useState(false)
+    const anime = () => {
         let animes:any = document.getElementsByClassName('animated')
         if( {click}.click == false ){
             for( let i = 0; animes.length > i; i++ ){
@@ -81,11 +81,12 @@ const MyApp = ({ Component, pageProps }: AppProps ) => {
     </Head>
     <ThemeProvider theme={theme}>
         <Article>
-        <Input value="anime" type="button"onClick={()=>a()} />
+        {/* <Input value="anime" type="button"onClick={()=>anime()} /> */}
             <Box>
                 <Divpro>
                     <Main_img className="animated" width="180px" height="180px" src={dir+'/images/main_circle.min.png'} alt="icon-image" />
-                    <H1 className="animated bbb">akaboshinit</H1>
+                    <H1 className="animated">akaboshinit</H1>
+                    <H1 className="animated">赤星 光誓</H1>
                 </Divpro>
                 <List>
                     <Link href="/category/profile" as={dir+'/category/profile'}>
@@ -206,7 +207,7 @@ const List = styled.ul`
     box-sizing: border-box;
     grid-column: 0/1;
     grid-row: 2/3;
-    margin: 30px 0px 0px 30px;
+    margin: 45px 0px 0px 30px;
     @media (max-width: 750px) {
         display: flex;
         margin: 40px 0;
@@ -223,6 +224,7 @@ const Icons = styled.ul`
     grid-row: 3/4;
     display: flex;
     position: relative;
+    margin: 20px 0 0 0;
     left: 50%;
     transform: translateX(-50%);
     width: 150px;
@@ -236,13 +238,13 @@ const Icons = styled.ul`
 const Divplece = styled.div`
     grid-column: 2/3;
     grid-row: 1/4;
-    position:relative;
+    /* position:relative; */
 `
 
 const Card = styled.div`
     width: 650px;
-    height: 550px;
-    padding: 0 10px;
+    height: 560px;
+    padding: 10px;
     color: ${(props) => (props.theme.colors.main)};
     font-family: 'Lato, Noto Sans Japanese, sans-serif';
     overflow-y: scroll;
@@ -250,16 +252,17 @@ const Card = styled.div`
         display:none;
     }
     @media (min-width: 750px) {
-        &::after {
+        /* &::after {
             position: absolute;
-            width: 650px;
-            height: 551px;
+            z-index: -1000;
+            width: 670px;
+            height: 581px;
             top: 0 ; left: 0; right: 0; bottom: 0;
             -moz-box-shadow: inset 0px 0px 5px 5px ${(props) => (props.theme.colors.bg)};
             -webkit-box-shadow: inset 0px 0px 5px 5px ${(props) => (props.theme.colors.bg)};
             box-shadow: inset 0px 0px 5px 5px ${(props) => (props.theme.colors.bg)};
             content: "";
-        }
+        } */
     }
     @media (max-width: 750px) {
         width: 100%;

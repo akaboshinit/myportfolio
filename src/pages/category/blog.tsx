@@ -15,7 +15,7 @@ const Blog = () => {
             size="S"
             img="black.jpg"
             title="準備中"
-            content="まだ準備中です/////"
+            content="まだ準備中です"
           />
       </Div>
     </>

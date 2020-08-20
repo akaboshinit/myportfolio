@@ -5,6 +5,7 @@ const A = styled.a`
     padding: 0px;
     margin: 0px;
     height: 30px;
+    text-decoration: none;
     &:hover {
         color: ${(props) => (props.theme.colors.hover)};
     }

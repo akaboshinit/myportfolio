@@ -11,17 +11,17 @@ return (
             className="slide"
             size="S"
             img="room.jpg"
-            title="大学通知LINE.bot"
+            title="大学通知LINEbot"
             content="大学のポータルサイトの.通知の利便性を改善すべく、.LINEと連携して随時通知を送る.プログラム"
         />
         <Imgcard
             className="slide"
             size="S"
             img="room.jpg"
-            title="bb"
-            content="aa"
+            title="ポートフォリオ"
+            content="このポートフォリオです。"
         />
-        <Imgcard
+        {/* <Imgcard
             className="slide"
             size="S"
             img="room.jpg"
@@ -41,7 +41,7 @@ return (
             img="room.jpg"
             title="bb"
             content="aa"
-        />
+        /> */}
     </Div>
 </>
 )

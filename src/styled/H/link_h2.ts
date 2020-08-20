@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 
-const a = 'red'
-
 const Link_h2 = styled.h2<{ currentpath:boolean }>`
+    font-size: 16px;
     box-sizing: border-box;
     line-height: 39px;
     letter-spacing: 3px;
