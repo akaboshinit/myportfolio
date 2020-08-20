@@ -17,7 +17,7 @@ const Imgcard:React.FC<Img_card> = (props:any) => {
             return(
             <>
                 <Card_frame className={props.className} css="width: 250px;">
-                    <Img_s width={s_size} height={s_size} src={dir+'/images/'+props.img} alt="image" />
+                    <Img_s width="100%" height={s_size} src={dir+'/images/'+props.img} alt="image" />
                     <Title>{props.title}</Title>
                     {line.map((array:string ,index:number)=>{
                         return <Contents key={index.toString()}>{array}</Contents>
@@ -29,7 +29,7 @@ const Imgcard:React.FC<Img_card> = (props:any) => {
             return(
             <>
                 <Card_frame className={props.className} css="width: 450px;height: 275px;">
-                    <Img_m width={m_size_w} height={m_size_h} src={dir+'/images/'+props.img} alt="image" />
+                    <Img_m width="100%" height={m_size_h} src={dir+'/images/'+props.img} alt="image" />
                 </Card_frame>
             </>
             )
