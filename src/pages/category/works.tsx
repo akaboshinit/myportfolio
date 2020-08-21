@@ -10,14 +10,14 @@ return (
         <Imgcard
             className="slide"
             size="S"
-            img="room.jpg"
+            img="double_s.png"
             title="大学通知LINEbot"
             content="大学のポータルサイトの.通知の利便性を改善すべく、.LINEと連携して随時通知を送る.プログラム"
         />
         <Imgcard
             className="slide"
             size="S"
-            img="room.jpg"
+            img="portfolio_screen.png"
             title="ポートフォリオ"
             content="このポートフォリオです。"
         />
