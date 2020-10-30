@@ -11,7 +11,7 @@ return (
     <Big>Kosei Akaboshi</Big>
     <Normal>赤星 光誓</Normal>
     <P css="display: inline;margin-left: 10px;">東京在住 大学1年生 </P>
-    <Div>
+    {/* <Div>
         <Imgcard css="margin-bottom: 20px"
             className="slide"
             size="M"
@@ -19,7 +19,7 @@ return (
             title=""
             content=""
         />
-    </Div>
+    </Div> */}
     <H3 css="width:150px">エンジニアとして</H3>
     <P>
         　高校3年生からプログラムの勉強を始め、歴は短いですが貪欲に勉強し様々な技術を修得しています。
